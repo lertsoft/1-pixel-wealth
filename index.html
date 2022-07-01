@@ -28,10 +28,10 @@
   <div class="wealth-wrapper-outer">
     <div class="wealth-row wealth-row-one">
       <div class="title-screen">
-        <h1>Wealth shown to scale</h1>
+        <h1 id="title"></h1>
         <div class="scroll-this-way">
-          <span>scroll right</span>
-          <div id="instructions" class="instructions">To scroll right, use shift + mousewheel. If you have a touchpad, swipe sideways.</div>
+          <span id="scroll">scroll right</span>
+          <div id="instructions" class="instructions"></div>
         </div>
       </div>
       <div class="wealth-wrapper">
@@ -45,7 +45,7 @@
       </div>
 
       <div class="wealth-wrapper median">
-        <h2 class="wealth-title">$68,000 <span class="explainer">(Median US household income)</span></h2>
+        <h2 class="wealth-title">$68,000 <span class="explainer" id="USWealth"></span></h2>
         <div class="wealth median-income"></div>
       </div>
 
@@ -648,7 +648,7 @@
     spanish
     </button>
     <hr />
-    <div id="title"></div>
+    <div id=""></div>
     <button id="saveBtn"></button>
     <hr />
     <div id="info"></div>

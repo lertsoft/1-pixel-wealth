@@ -121,7 +121,7 @@ i18next
     defaultNS: 'translation',
     backend: {
       // load from i18next-gitbook repo
-      loadPath: 'https://raw.githubusercontent.com/lertsoft/1-pixel-wealth/master/locales/es/translation.json',
+      loadPath: 'https://raw.githubusercontent.com/lertsoft/1-pixel-wealth/master/locales/{{lng}}/{{ns}}.json',
       crossDomain: true
     }
   }, function(err, t) {
@@ -134,6 +134,19 @@ i18next
 // could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
 function updateContent() {
   document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
+  document.getElementById('scroll').innerHTML = i18next.t('scroll', { what: 'i18next' });
+  document.getElementById('instructions').innerHTML = i18next.t('instructions', { what: 'i18next' });
+  document.getElementById('USWealth').innerHTML = i18next.t('USWealth', { what: 'i18next' });
+  document.getElementById('million').innerHTML = i18next.t('million', { what: 'i18next' });
+  document.getElementById('billion').innerHTML = i18next.t('billion', { what: 'i18next' });
+  document.getElementById('bezozWealth').innerHTML = i18next.t('bezozWealth', { what: 'i18next' });
+  document.getElementById('80M').innerHTML = i18next.t('80M', { what: 'i18next' });
+  document.getElementById('80M1').innerHTML = i18next.t('80M1', { what: 'i18next' });
+  document.getElementById('jeffBezoz').innerHTML = i18next.t('jeffBezoz', { what: 'i18next' });
+  document.getElementById('scale').innerHTML = i18next.t('scale', { what: 'i18next' });
+  document.getElementById('scaleLink').innerHTML = i18next.t('scaleLink', { what: 'i18next' });
+  document.getElementById('scale1').innerHTML = i18next.t('tscale1', { what: 'i18next' });
+  document.getElementById('10px').innerHTML = i18next.t('10px', { what: 'i18next' });
   document.getElementById('saveBtn').innerHTML = i18next.t('80M', { count: Math.floor(Math.random()*2+1)  });
   
   document.getElementById('info').innerHTML = `detected user language: "${i18next.language}"  --> loaded languages: "${i18next.languages.join(', ')}"`;
