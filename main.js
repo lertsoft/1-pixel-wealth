@@ -117,11 +117,11 @@ i18next
   .init({
     fallbackLng: 'en',
     debug: true,
-    ns: ['special', 'common'],
-    defaultNS: 'special',
+    ns: ['translation'],
+    defaultNS: 'translation',
     backend: {
       // load from i18next-gitbook repo
-      loadPath: 'https://raw.githubusercontent.com/i18next/i18next-gitbook/master/locales/{{lng}}/{{ns}}.json',
+      loadPath: 'https://raw.githubusercontent.com/lertsoft/1-pixel-wealth/master/locales/es/translation.json',
       crossDomain: true
     }
   }, function(err, t) {
@@ -134,7 +134,7 @@ i18next
 // could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
 function updateContent() {
   document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
-  document.getElementById('saveBtn').innerHTML = i18next.t('common:button.save', { count: Math.floor(Math.random()*2+1)  });
+  document.getElementById('saveBtn').innerHTML = i18next.t('80M', { count: Math.floor(Math.random()*2+1)  });
   
   document.getElementById('info').innerHTML = `detected user language: "${i18next.language}"  --> loaded languages: "${i18next.languages.join(', ')}"`;
 }
