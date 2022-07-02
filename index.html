@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://unpkg.com/i18next/i18next.js"></script>
-<script src="https://unpkg.com/i18next-http-backend/i18nextHttpBackend.js"></script>
-<script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+  <meta charset="utf-8">
 
   <title>Wealth, shown to scale</title>
+   <!-- Scripts for the different languages -->
+  <!-- <script src="https://unpkg.com/i18next/i18next.js"></script> -->
+<!-- <script src="https://unpkg.com/i18next-http-backend/i18nextHttpBackend.js"></script> -->
+<!-- <script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script> -->
+<script src="./js/i18n.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+
+  <!-- Meta information for the different cards, popups, and search engines. -->
+
+ 
   <meta name="description" content="Inequality in the United States is out of control. Here we visualize the issue in a unique way." />
 
   <meta name="twitter:card" content="summary_large_image">
@@ -20,20 +29,24 @@
   <meta property="og:description" content="Wealth inequality in the United States is out of control. Here we visualize the issue in a unique way." />
   <meta property="og:image" content="https://raw.githubusercontent.com/lertsoft/1-pixel-wealth/1c3eb60e98b77ac6601f635a95d6b233ae5db222/img/off-the-chart.png" />
 
+    <!-- Stylesheet -->
   <link rel="stylesheet" type="text/css" href="main.css?version=1.10">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 </head>
-<body>
+<!--  -->
 
+<body>
+  <!-- Starting point -->
   <div class="wealth-wrapper-outer">
     <div class="wealth-row wealth-row-one">
       <div class="title-screen">
-        <h1 id="title"></h1>
+        <h1  data-i18n="title">Wealth, shown to scale</h1>
         <div class="scroll-this-way">
-          <span id="scroll">scroll right</span>
-          <div id="instructions" class="instructions"></div>
+          <span data-i18n="scroll">scroll right</span>
+          <div data-i18n="instruc" class="instructions">To scroll right, use shift + mousewheel. If you have a touchpad, swipe sideways.</div>
         </div>
       </div>
+      <!--  -->
       <div class="wealth-wrapper">
         <h2 class="wealth-title">$1,000</h2>
         <div class="wealth one-thousand"></div>
@@ -45,130 +58,141 @@
       </div>
 
       <div class="wealth-wrapper median">
-        <h2 class="wealth-title">$68,000 <span class="explainer" id="USWealth"></span></h2>
+        <h2 class="wealth-title" >$68,000 <span class="explainer" data-i18n="USWealth">(Median US household income)</span></h2>
         <div class="wealth median-income"></div>
       </div>
 
       <div class="wealth-wrapper million">
-        <h2 class="wealth-title">$1 million</h2>
+        <h2 class="wealth-title" data-i18n="million">$1 Million </h2>
         <div class="wealth"></div>
       </div>
 
       <div class="wealth-wrapper billion">
         <div class="wealth">
-          <h2 class="wealth-title">$1 billion</h2>
+          <h2 class="wealth-title" data-i18n="billion">$1 Billion </h2>
         </div>
       </div>
 
       <div name="bezos" class="wealth-wrapper bezos">
         <div id="bezos" class="wealth ruler">
-          <h2 class="wealth-title">$185 billion (wealth of Jeff Bezos)</h2>
+          <h2 class="wealth-title" data-i18n="bezozWealth">$185 billion (wealth of Jeff Bezos)</h2>
           <div class="counter" id="bezos-counter"></div>
           <div class="key">
-            <span>$80 million</span>
+            <span data-i18n="m1">$80 million</span>
           </div>
 
           <div class="text-infobox infobox first">
-            <div class="title">Jeff is so wealthy, that it is quite literally unimaginable.</div>
+            <div class="title" data-i18n="jeffBezoz">
+              <span >Jeff is so wealthy, that it is quite literally unimaginable.</span>
+            </div>
           </div>
 
           <div class="text-infobox infobox">
-            <div class="title">We rarely see wealth inequality represented to scale. This is part of the reason Americans <a href="https://www.ncbi.nlm.nih.gov/pubmed/26162108" target="_blank" rel="noopener noreferrer">consistently under-estimate</a> the relative wealth of the super rich.</div>
+            <div class="title" data-i18n="scale"> We rarely see wealth inequality represented to scale. This is part of the reason Americans 
+              <a href="https://www.ncbi.nlm.nih.gov/pubmed/26162108" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              data-i18n="scaleLink">
+              consistently under-estimate</a> 
+              <div data-i18n="scale1" >the relative wealth of the super rich.</div> </div>
           </div>
 
           <div class="five-pixels text-infobox infobox-half infobox">
-            <div class="title">Every 10 pixels you scroll is $5 million.</div>
+            <div class="title" data-i18n="px">Every 10 pixels you scroll is $5 million.</div>
           </div>
 
           <div class="coming-up text-infobox infobox">
-            <div class="title">OK, we're coming up on the end now.</div>
+            <div class="title" data-i18n="joke">OK, we're coming up on the end now.</div>
           </div>
 
           <div class="text-infobox infobox">
             <div id="bezos-counter-start" class="title">
-              <p>Lol, just kidding, we're about a third of the way. Keep scrolling though, there's more to see.</p>
+              <p data-i18n="Third">Lol, just kidding, we're about a third of the way. Keep scrolling though, there's more to see.</p>
             </div>
           </div>
 
 
           <div class="text-infobox infobox infobox-half">
-            <div class="title">Let's put this wealth in perspective by comparing it to some familiar things.</div>
+            <div class="title" data-i18n="perspective">Let's put this wealth in perspective by comparing it to some familiar things.</div>
           </div>
 
           <div class="infobox infobox-half lifetime">
             <div class="title-square-wrapper">
-              <div class="title">All the money you will ever earn in your entire life from the day you are born until the day you die (about $1.7 million)</div>
+              <div class="title" data-i18n="perspective1">All the money you will ever earn in your entire life from the day you are born until the day you die (about $1.7 million)</div>
               <div class="square"></div>
             </div>
           </div>
 
           <div class="infobox infobox-half healthcare">
             <div class="title-square-wrapper">
-              <div class="title">Annual cost of health care for a family of four</div>
+              <div class="title" data-i18n="perspective2">Annual cost of health care for a family of four</div>
               <div class="square"></div>
             </div>
           </div>
 
           <div class="infobox infobox-half amazon-year">
             <div class="title-square-wrapper">
-              <div class="title">Annual pay of an Amazon warehouse worker.</div>
+              <div class="title" data-i18n="perspective3">Annual pay of an Amazon warehouse worker.</div>
               <div class="square"></div>
             </div>
           </div>
 
           <div class="infobox infobox-half year-veteran">
             <div class="square shadow">
-              <div class="title">Annual cost to house every homeless US veteran.</div>
+              <div class="title" data-i18n="perspective4">Annual cost to house every homeless US veteran.</div>
             </div>
           </div>
 
           <div class="infobox infobox-half year-chemo">
             <div class="square shadow">
-              <div class="title">Annual cost of chemotherapy for all cancer patients ($9 billion)</div>
+              <div class="title" data-i18n="perspective5">Annual cost of chemotherapy for all cancer patients ($9 billion)</div>
               <div class="midtext-wrapper">
-                <div class="midtext">On July 20th 2020 Jeff Bezos made <a href="https://www.cnbc.com/2020/07/21/bezos-record-multibillion-dollar-net-worth-gain-bloomberg.html" target="_blank" rel="noopener noreferrer">$13 billion</a> in a single day.</div>
+                <div class="midtext" >
+                  <a href="https://www.cnbc.com/2020/07/21/bezos-record-multibillion-dollar-net-worth-gain-bloomberg.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer" data-i18n="perspective6"  >On July 20th 2020 Jeff Bezos made $13 billion in a single day.</a> </div>
               </div>
             </div>
           </div>
 
           <div class="infobox infobox-half text-infobox">
             <div class="title">
-              <p>Even the fortunes of very rich people are dwarfed by the incomprehensible wealth of the 0.0001%.</p>
+              <p data-i18n="perspective7">Even the fortunes of very rich people are dwarfed by the incomprehensible wealth of the 0.0001%.</p>
             </div>
           </div>
 
           <div class="infobox infobox-quarter celebrities">
             <div class="column-infobox">
               <div class="sub-infobox goldman">
-                <div class="title">Wealth of Goldman Sachs CEO David Solomon ($50 million)</div>
+                <div class="title" data-i18n="perspective8">Wealth of Goldman Sachs CEO David Solomon ($50 million)</div>
                 <div class="square shadow"></div>
               </div>
 
             </div>
             <div class="sub-infobox beyonce">
-              <div class="title">Wealth of Beyonc&eacute; ($400 million)</div>
+              <div class="title" data-i18n="perspective9">Wealth of Beyonc&eacute; ($400 million)</div>
               <div class="square shadow"></div>
             </div>
 
             <div class="sub-infobox tim-cook">
-              <div class="title">Wealth of Apple CEO Tim Cook ($625 million)</div>
+              <div class="title" data-i18n="perspective10">Wealth of Apple CEO Tim Cook ($625 million)</div>
               <div class="square shadow"></div>
             </div>
 
             <div class="column-infobox">
               <div class="sub-infobox doctor small">
-                <div class="title">Lifetime earnings of a doctor, on average ($6.7 million)</div>
+                <div class="title" data-i18n="perspective11">Lifetime earnings of a doctor, on average ($6.7 million)</div>
                 <div class="square shadow"></div>
               </div>
 
               <div class="sub-infobox lawyer small">
-                <div class="title">Lifetime earnings of a lawyer, on average ($4 million)</div>
+                <div class="title" data-i18n="perspective12">Lifetime earnings of a lawyer, on average ($4 million)</div>
                 <div class="square shadow"></div>
               </div>
             </div>
 
             <div class="sub-infobox hedgefund">
-              <div class="title">Lifetime earnings of a hedge fund manager, on average ($84 million)</div>
+              <div class="title" data-i18n="perspective13">Lifetime earnings of a hedge fund manager, on average ($84 million)</div>
               <div class="square shadow"></div>
             </div>
 
@@ -176,32 +200,38 @@
 
           <div class="infobox infobox-close text-infobox">
             <div class="title">
-              <p>These people may see themselves as fabulously rich, and often oppose policies aimed at reducing inequality.</p>
+              <p data-i18n="perspective14">These people may see themselves as fabulously rich, and often oppose policies aimed at reducing inequality.</p>
             </div>
           </div>
 
           <div class="infobox infobox-close text-infobox">
             <div class="title">
-              <p>But many have not fully grasped the enormous gulf between themselves and the super rich.</p>
+              <p data-i18n="perspective15">But many have not fully grasped the enormous gulf between themselves and the super rich.</p>
             </div>
           </div>
 
           <div id="line-chart" class="infobox infobox-quarter line-chart">
             <div class="chart-outer">
               <div class="chart-inner">
+                <!-- Mark Zuckerber Graph -->
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="150 276 604 133" width="604" height="133">
                     <defs>
-                      <font-face font-family="Arial" font-size="16" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" ascent="905.2734" descent="-211.91406" font-weight="400">
+                      <font-face font-family="Arial" font-size="16" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" 
+                      underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" 
+                      ascent="905.2734" descent="-211.91406" font-weight="400">
                         <font-face-src>
                           <font-face-name name="ArialMT"/>
                         </font-face-src>
                       </font-face>
-                      <font-face font-family="Arial" font-size="12" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" ascent="905.2734" descent="-211.91406" font-weight="400">
+                      <font-face font-family="Arial" font-size="12" panose-1="2 11 6 4 2 2 2 2 2 4" units-per-em="1000" 
+                      underline-position="-105.95703" underline-thickness="73.24219" slope="0" x-height="518.5547" cap-height="716.3086" 
+                      ascent="905.2734" descent="-211.91406" font-weight="400">
                         <font-face-src>
                           <font-face-name name="ArialMT"/>
                         </font-face-src>
                       </font-face>
-                      <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+                      <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" 
+                      stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 10 8" markerWidth="10" markerHeight="8" color="black">
                         <g>
                           <path d="M 8 0 L 0 -3 L 0 3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
                         </g>
@@ -219,6 +249,7 @@
                             <tspan font-family="Arial" font-size="12" font-weight="400" fill="black" x="13.105469" y="46.046875">($116 billion)</tspan>
                           </text>
                         </g>
+                        <!-- Zoom in / zoom out graph -->
                         <g id="Graphic_5">
                           <text transform="translate(173 353.7383)" fill="black">
                             <tspan font-family="Arial" font-size="16" font-weight="400" fill="black" x="0" y="14">$0</tspan>
@@ -230,7 +261,8 @@
                           </text>
                         </g>
                         <g id="Line_10">
-                          <line x1="197.54418" y1="304.02344" x2="197.09944" y2="345.59456" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="1"/>
+                          <line x1="197.54418" y1="304.02344" x2="197.09944" y2="345.59456" marker-end="url(#FilledArrow_Marker)" 
+                          stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="1"/>
                         </g>
                         <g id="Line_2">
                           <line x1="203" y1="362" x2="703" y2="362" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="13"/>
@@ -242,6 +274,8 @@
                     </g>
                   </svg>
                 </div>
+
+                <!-- Fix zoom out animation -->
                 <div id="ok-zoomer">
                   <a class="zoom-in" onclick="toggleZoom()" href="javascript:;">Zoom In</a>
                   <a class="zoom-out" onclick="toggleZoom()" href="javascript:;">Zoom Out</a>
@@ -249,65 +283,83 @@
               </div>
             </div>
 
+            <!-- Infoboxes starting point -->
             <div class="infobox infobox-close text-infobox">
               <div class="title">
-                <p>We can have a world in which wealthy people exist, without handing <a href="https://www.usatoday.com/story/money/2018/01/22/vast-majority-new-wealth-last-year-went-top-1/1051947001/" target="_blank" rel="noopener noreferrer">nearly all money</a>  to the super rich.
+                <p data-i18n="zoomOut">
+                  <a href="https://www.usatoday.com/story/money/2018/01/22/vast-majority-new-wealth-last-year-went-top-1/1051947001/" 
+                  target="_blank" 
+                  rel="noopener noreferrer">
+                  We can have a world in which wealthy people exist, without handing nearly all money to the super rich.</a> 
+                  </p>
                 </div>
               </div>
 
         <div class="infobox infobox text-infobox no-single-human">
           <div class="title">
-            <p>No single human needs or deserves this much wealth.</p>
+            <p data-i18n="zoomOut0">No single human needs or deserves this much wealth.</p>
           </div>
         </div>
 
       </div>
     </div>
 
+    <!-- Beggining of 400 Richest Americans -->
     <div id="four-hundred" class="wealth-wrapper four-hundred">
       <div class="wealth ruler">
-        <h2 class="wealth-title">400 richest Americans ($3.2 trillion)</h2>
+        <h2 class="wealth-title" data-i18n="zoomOut1">400 richest Americans ($3.2 trillion)</h2>
         <div class="counter" id="four-hundred-counter"></div>
         <div class="key">
-          <span>$80 million</span>
+          <span data-i18n="m2" >$80 million</span>
         </div>
 
         <div class="infobox infobox text-infobox intro">
-          <div class="title">
-            Jeff Bezos may be insanely rich, but it is a drop in the ocean compared to the combined wealth of his peers. The 400 richest Americans own about $3.2 trillion, which is more than the bottom 60% of Americans.
+          <div class="title" data-i18n="zoomOut2">
+            Jeff Bezos may be insanely rich, but it is a drop in the ocean compared to the combined wealth of his peers. 
+            The 400 richest Americans own about $3.2 trillion, which is more than the bottom 60% of Americans.
           </div>
         </div>
 
         <div id="four-hundred-counter-start" class="people-wrapper-outer four-hundred-people infobox infobox-close">
           <div class="people-wrapper center-sticky">
             <div class="people">
-              <div class="people-label bubble">400 people</div>
+              <div class="people-label bubble" data-i18n="zoomOut3">
+                400 people
+              </div>
             </div>
           </div>
         </div>
 
         <div class="people-wrapper-outer sixty-percent-people infobox infobox-close">
           <div id="sixty-percent" class="people-wrapper center-sticky">
-            <div class="people-label bubble">Bottom 60% <div class="people-sub-label">(Scroll Down)</div></div>
+            <div class="people-label bubble" data-i18n="zoomOut4">Bottom 60% 
+              <div class="people-sub-label" data-i18n="scrollDown">(Scroll Down)</div>
+            </div>
             <div id="sixty-percent-indicator" class="percent">0.0%</div>
           </div>
         </div>
 
         <div class="infobox infobox text-infobox intro">
           <div class="title">
-            <p>A trillion dollars is such a large figure, that you might as well say "eleventy gajillion zillion dollars."  So in this section, we will try to understand the scale of this figure by looking at what could be accomplished with various chunks of this wealth.</p>
+            <p data-i18n="zoomOut5">A trillion dollars is such a large figure, that you might as well say "eleventy gajillion zillion dollars."  
+              So in this section, we will try to understand the scale of this figure by looking at what could be accomplished with various chunks of this wealth.</p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <div class="title">
-            Some will argue that using this wealth for public benefit is not possible, because it's "tied up" in stocks, and therefore inaccessible. <a href="https://github.com/MKorostoff/1-pixel-wealth/blob/master/THE_PAPER_BILLIONAIRE.md" target="_blank" rel="noopener noreferrer">This is just not true</a>.
+          <div class="title" data-i18n="zoomOut6">
+            <a href="./THE_PAPER_BILLIONAIRE.md" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            Some will argue that using this wealth for public benefit is not possible, because it's "tied up" in stocks, and therefore inaccessible. 
+            This is just not true</a>.
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <div class="title">
-            <p>As we proceed, try to keep in mind: all of this wealth is controlled by a group so small, that they could fit on a single 747 airplane&#8212;with 260 seats left over.</p>
+          <div class="title" data-i18n="zoomOut7">
+            <p>As we proceed, try to keep in mind: all of this wealth is controlled by a group so small, 
+              that they could fit on a single 747 airplane&#8212;with 260 seats left over.</p>
           </div>
         </div>
 
@@ -320,7 +372,7 @@
         </div>
 
         <div class="infobox text-infobox infobox-half">
-          <h2 class="title what-could-we-do">What could we do with under 10% of this money?</h2>
+          <h2 class="title what-could-we-do" data-i18n="zoomOut8">What could we do with under 10% of this money?</h2>
         </div>
 
         <div class="infobox infobox-quarter flex">
@@ -331,26 +383,60 @@
             <span class="label">6%</span>
             <div class="dotted-line"></div>
             <div class="description">
-              <h2>Vaccinate every human on earth against coronavirus</h2>
+              <h2 data-i18n="zoomOut9">Vaccinate every human on earth against coronavirus</h2>
             </div>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <div class="title">
-            <p>Based on the <a href="https://www.washingtonpost.com/world/eu-coronavirus-vaccines-cheaper-than-united-states/2020/12/18/06677e34-4139-11eb-b58b-1623f6267960_story.html" rel="noopener noreferrer">cost of vaccines</a> and the <a href="https://www.who.int/docs/default-source/coronaviruse/act-accelerator/covax/costs-of-covid-19-vaccine-delivery-in-92amc_08.02.21.pdf" target="_blank" rel="noopener noreferrer">cost of delivery</a>, it would take around <a href="https://github.com/MKorostoff/1-pixel-wealth/blob/master/docs/COST_OF_VACCINATION.md" target="_blank" rel="noopener noreferrer">$200 billion</a> to vaccinate every person on earth, which is about 6% of the wealth currently controlled by 400 Americans. After paying for this vaccination program, these individuals would still be $40 billion richer than they were before the pandemic.</p>
+          <div class="title" >
+            <p>
+              <a href="https://www.washingtonpost.com/world/eu-coronavirus-vaccines-cheaper-than-united-states/2020/12/18/06677e34-4139-11eb-b58b-1623f6267960_story.html" 
+                rel="noopener noreferrer">
+              <span data-i18n="zoomOut10">
+                
+                Based on the cost of vaccines </span></a>
+                <a href="./docs/Costs-of-COVID-19-vaccine-delivery-in-92AMC_08.02.21.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer">
+              <span data-i18n="zoomOut10A">
+              and the cost of delivery, it would take around</span> </a> 
+              <a href="./docs/COST_OF_VACCINATION.md" 
+              target="_blank" 
+              rel="noopener noreferrer">
+               <span data-i18n="zoomOut10B">
+              $200 billion to vaccinate every person on earth, which is about 6% of the wealth currently controlled by 400 Americans.  </span> </a>
+              <span data-i18n="zoomOut10C">
+              After paying for this vaccination program, these individuals would still be $40 billion richer than they were before the pandemic.</span></p>
+          </div>
+        </div>
+
+        <div class="infobox text-infobox infobox-close">
+          <div class="title" >
+            <p >
+              <span data-i18n="zoomOut11"> setting aside the desperate humanitarian need for a global vaccination, there is still a strong self-interested argument that wealthy countries should do it: the longer covid circulates in the world, the more chance of a </span>
+              <a href="https://www.newscientist.com/article/mg24933201-800-vaccine-nationalism-will-leave-everyone-more-at-risk-of-coronavirus/" 
+              target="_blank" 
+              rel="noopener noreferrer">
+              <span data-i18n="zoomOut11Link" >vaccine resistant variant </span> </a> <span data-i18n="zoomOut11C" > and undoing all the vaccine progress we've already made.</span></p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>Even setting aside the desperate humanitarian need for a global vaccination, there is still a strong self-interested argument that wealthy countries should do it: the longer covid circulates in the world, the more chance of a <a href="https://www.newscientist.com/article/mg24933201-800-vaccine-nationalism-will-leave-everyone-more-at-risk-of-coronavirus/" target="_blank" rel="noopener noreferrer">vaccine resistant variant</a> emerging, and undoing all the vaccine progress we've already made.</p>
-          </div>
-        </div>
-
-        <div class="infobox text-infobox infobox-close">
-          <div class="title">
-            <p>The World Health Organization is currently organizing a global vaccine donation program which aims to vaccinate <a href="https://www.who.int/initiatives/act-accelerator/covax" target="_blank" rel="noopener noreferrer">about 20%</a> of residents in poor countries by the end of 2021, and even that approach has <a href="https://www.washingtonpost.com/world/2021/04/01/covax-healthcare-workers-funding/" target="_blank" rel="noopener noreferrer">substantial funding shortfalls</a>.</p>
+            <p>
+              <span data-i18n="zoomOut12" >
+              The World Health Organization (WHO) is currently organizing a global vaccine donation program which aims to vaccinate 
+            </span>
+              <a href="https://www.who.int/initiatives/act-accelerator/covax" 
+              target="_blank" 
+              rel="noopener noreferrer"> <span data-i18n="zoomOut12Link" > about 20% </span></a> 
+              <span data-i18n="zoomOut12C">
+                of residents in poor countries by the end of 2021, and even that approach has 
+            </span>
+              <a href="https://www.washingtonpost.com/world/2021/04/01/covax-healthcare-workers-funding/" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="zoomOut12Link1">substantial funding shortfalls </span></a>.</p>
           </div>
         </div>
 
@@ -362,14 +448,14 @@
             <span class="label">3%</span>
             <div class="dotted-line"></div>
             <div class="description">
-              <h2>Permanently eradicate malaria</h2>
+              <h2 data-i18n="zoomOut13">Permanently eradicate malaria</h2>
             </div>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>Malaria is one of the worst infectious diseases ever visited on mankind, possibly killing more people than any other infectious disease in history. In the 20th century alone, malaria killed more people than the Black Death.</p>
+            <p data-i18n="zoomOut14">Malaria is one of the worst infectious diseases ever visited on mankind, possibly killing more people than any other infectious disease in history. In the 20th century alone, malaria killed more people than the Black Death.</p>
           </div>
         </div>
 
@@ -377,17 +463,21 @@
           <div class="infectious">
             <div class="malaria-bar">
               <div class="square shadow">
-                <div class="title">Annual Malaria deaths<br> (409,000)</div>
+                <div class="title" data-i18n="zoomOut15">Annual Malaria deaths<br> (409,000)</div>
               </div>
             </div>
-            <div class="ebola-bar"><div class="title">Ebola deaths in <strong>all of human history</strong> combined (about 15,000)</div>
+            <div class="ebola-bar">
+              <div class="title">
+                <span data-i18n="zoomOut16"> deaths in </span>
+                <strong><span data-i18n="zoomOut16ST"> all of human history</span></strong> 
+                <span data-i18n="zoomOut16C">(about 15,000)</span></div>
               <div class="square shadow"></div>
             </div>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <div class="title">
+          <div class="title" data-i18n="zoomOut17">
             These figures are even more shocking when you learn that malaria overwhelmingly kills children; around two-thirds of malaria deaths each year are children under five. That's around 275,000 children.
           </div>
         </div>
@@ -395,7 +485,8 @@
         <div class="infobox infobox-close malaria flex">
           <div id="babies-wrapper" class="babies-wrapper center-sticky">
             <div id="babies" class="babies">
-              <div class="scroll-indicator bubble">Children under five killed by malaria each year <div class="people-sub-label">(Scroll Down)</div></div>
+              <div class="scroll-indicator bubble"> <span data-i18n="zoomOut18" > under five killed by malaria each year </span>
+                <div class="people-sub-label"> <span data-i18n="scrollDown18">(Scroll Down)</span></div></div>
               <span id="baby-counter" class="baby-counter bubble">10</span>
             </div>
           </div>
@@ -403,14 +494,18 @@
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p><em>All</em> of these deaths are preventable. Treating and preventing malaria is a well understood science, universally practiced in the developed world.</p>
-            <p><a href="https://www.ncbi.nlm.nih.gov/pubmed/25551454" target="_blank" rel="noopener noreferrer">It is estimated</a> that malaria could be globally eradicated by 2030 for a cost around $1.84 per at-risk person per year, or around $100 billion total. This would be around 3% of the wealth currently possessed by the 400 richest Americans.</p>
+            <p><em data-i18n="zoomOut19EM" >All</em> <span data-i18n="zoomOut19"> these deaths are preventable. Treating and preventing malaria is a well understood science, universally practiced in the developed world. </span></p>
+            <p><a href="https://www.ncbi.nlm.nih.gov/pubmed/25551454" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="zoomOut20Link">It is estimated </span></a> 
+              <span data-i18n="zoomOut20" >that malaria could be globally eradicated by 2030 for a cost around $1.84 per at-risk person per year, or around $100 billion total. 
+              This would be around 3% of the wealth currently possessed by the 400 richest Americans.</span></p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>Around 800 children will die of malaria today. A small group of super rich people could stop it for a sum of money so small that they would likely never even notice its absence. But they choose not to.</p>
+            <p data-i18n="zoomOut21">Around 800 children will die of malaria today. A small group of super rich people could stop it for a sum of money so small that they would likely never even notice its absence. But they choose not to.</p>
           </div>
         </div>
 
@@ -422,21 +517,37 @@
             <span class="label">2.5%</span>
             <div class="dotted-line"></div>
             <div class="description">
-              <h2>Wipe out all the delinquent medical debt in America</h2>
+              <h2 data-i18n="zoomOut22">Wipe out all the delinquent medical debt in America</h2>
             </div>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>Americans have about <a href="https://www.pbs.org/newshour/health/millennials-rack-up-the-most-medical-debt-and-more-frequently" target="_blank" rel="noopener noreferrer">$81 billion</a> in medical debt that is sufficiently past due as to appear on their credit report. These are generally small debts, with a median value of <a href="https://files.consumerfinance.gov/f/201412_cfpb_reports_consumer-credit-medical-and-non-medical-collections.pdf" target="_blank" rel="noopener noreferrer">$207 dollars</a> per person.</p>
-            <p> These debts hinder the credit of over 50 million Americans, and do long term damage to their housing, employment, and borrowing options. The cost of repaying this debt dollar-for-dollar would be around 2.5% of the wealth controlled by 400 Americans.</p>
+            <p> <span data-i18n="zoomOut23"> Americans have about </span>
+              <a href="https://www.pbs.org/newshour/health/millennials-rack-up-the-most-medical-debt-and-more-frequently" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="zoomOut23Link" >$81 billion</span></a> 
+              <span data-i18n="zoomOut23C" > in medical debt that is sufficiently past due as to appear on their credit report. 
+              These are generally small debts, with a median value of </span>
+              <a href="/docs/201412_cfpb_reports_consumer-credit-medical-and-non-medical-collections.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="zoomOut23Link1" >$207 dollars</span></a> 
+              <span data-i18n="zoomOut23C1" >per person.</span></p>
+
+            <p data-i18n="zoomOut24"> These debts hinder the credit of over 50 million Americans, and do long term damage to their housing, employment, and borrowing options. The cost of repaying this debt dollar-for-dollar would be around 2.5% of the wealth controlled by 400 Americans.</p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <div class="title">
-            This situation looks even better once you understand that delinquent debt is often purchased for as <a href="https://www.ksl.com/article/46455844/charity-buys-and-erases-past-due-medical-debt" target="_blank" rel="noopener noreferrer">little as 1%</a> of its face value. This would make the total cost of eliminating all delinquent medical debt around $810 million. In 2020, the richest 400 Americans accrued this amount roughly every 29 hours.
+          <div class="title"><span data-i18n="zoomOut25" >
+            This situation looks even better once you understand that delinquent debt is often purchased for as 
+          </span>
+            <a href="https://www.ksl.com/article/46455844/charity-buys-and-erases-past-due-medical-debt" 
+            target="_blank" 
+            rel="noopener noreferrer"><span data-i18n="zoomOut25Link" >little as 1%</span></a> 
+            <span data-i18n="zoomOut25C" >of its face value. This would make the total cost of eliminating all delinquent medical debt around $810 million. 
+            In 2020, the richest 400 Americans accrued this amount roughly every 29 hours.</span>
           </div>
         </div>
 
@@ -448,7 +559,12 @@
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            Note that this figure includes only <em>delinquent</em> medical debt, not all medical debt. The value of all medical debt in America is not publicly known, but probably in the neighborhood of <a href="https://github.com/MKorostoff/1-pixel-wealth/blob/master/docs/VALUE_OF_MEDICAL_DEBT.md" target="_blank" rel="noopener noreferrer">$300 billion</a>, or 9% of the wealth controlled by 400 Americans.
+            <span data-i18n="zoomOut26"> Note that this figure includes only </span>
+            <em><span data-i18n="zoomOut26EM" >delinquent</span></em> 
+            <span data-i18n="zoomOut26C"> medical debt, not all medical debt. The value of all medical debt in America is not publicly known, but probably in the neighborhood of</span>
+            <a href="./docs/VALUE_OF_MEDICAL_DEBT.md" 
+            target="_blank" 
+            rel="noopener noreferrer"><span data-i18n="zoomOut26Link">$300 billion,</span></a><span data-i18n="zoomOut26C1" > or 9% of the wealth controlled by 400 Americans.</span>
           </div>
         </div>
 
@@ -460,47 +576,59 @@
             <span class="label">5.3%</span>
             <div class="dotted-line"></div>
             <div class="description">
-              <h2>Lift every American out of poverty.</h2>
+              <h2 data-i18n="zoomOut27">Lift every American out of poverty.</h2>
             </div>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <div class="title">
+          <div class="title" data-i18n="zoomOut28">
             As of 2021, around 38 million Americans lived in poverty. If Americans in poverty were a state, they would be second largest by population. There are more Americans living in poverty than the entire population of Canada.
           </div>
         </div>
 
         <div class="infobox infobox-close">
           <div class="chart">
-            <h3>Population of US States compared to poverty, 2021</h3>
+            <h3 data-i18n="zoomOut29">Population of US States compared to poverty, 2021</h3>
             <img src="img/poverty.svg">
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p><a href="https://www.census.gov/content/dam/Census/library/publications/2019/demo/p60-266.pdf" target="_blank" rel="noopener noreferrer">Every single person</a> in America could be lifted above the poverty line with a one-time cash subsidy of around $10,000 per impoverished family (and about $7,000 for impoverished individuals). The total cost would be $170 billion, a little over 5% of the wealth currently controlled by 400 individuals.</p>
+            <p>
+              <a href="/docs/p60-266.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="zoomOut30Link">Every single person</span></a> 
+              <span data-i18n="zoomOut30"> in America could be lifted above the poverty line with a one-time cash subsidy of around $10,000 per impoverished family (and about $7,000 for impoverished individuals). The total cost would be $170 billion, a little over 5% of the wealth currently controlled by 400 individuals.</span></p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>It may seem counter intuitive that a one-time subsidy could have any lasting impact on chronic poverty. But one of the surprising truths about poverty is that it's fluid. Americans move in and out of poverty many times throughout their lives, and one good year can have a massive and long lasting effect.</p>
+            <p data-i18n="infoBox">It may seem counter intuitive that a one-time subsidy could have any lasting impact on chronic poverty. But one of the surprising truths about poverty is that it's fluid. Americans move in and out of poverty many times throughout their lives, and one good year can have a massive and long lasting effect.</p>
 
-              <p>A wealth of data now supports the idea that <a href="https://www.givedirectly.org/research-on-cash-transfers/" target="_blank" rel="noopener noreferrer">one-time cash transfers can permanently transform a local economy.</a> Given a sudden windfall, people invest in their future. They go back to school, obtain transportation, pay for childcare, pay down debilitating debts, and do any number of things to improve their career prospects and financial future.</p>
+              <p><span data-i18n="infoBox0">A wealth of data now supports the idea that </span>
+                <a href="https://www.givedirectly.org/research-on-cash-transfers/" 
+                target="_blank" 
+                rel="noopener noreferrer"><span data-i18n="infoBox0Link">one-time cash transfers can permanently transform a local economy.</span></a> 
+                <span data-i18n="infoBox0C">Given a sudden windfall, people invest in their future. They go back to school, obtain transportation, pay for childcare, pay down debilitating debts, and do any number of things to improve their career prospects and financial future.</span></p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>In the US, for all of the people that escape poverty in any given year, <a href="https://poverty.ucdavis.edu/sites/main/files/file-attachments/stevens_1994aerpp.pdf" target="_blank" rel="noopener noreferrer">about half stay out of poverty for at least five years afterwards</a>. About a third are still out of poverty ten years later.</p>
+            <p><span data-i18n="infoBox1">In the US, for all of the people that escape poverty in any given year, </span>
+              <a href="/docs/stevens_1994aerpp.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="infoBox1Link">about half stay out of poverty for at least five years afterwards</span></a>. 
+              <span data-i18n="infoBox1C">About a third are still out of poverty ten years later.</span></p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>This would not be a permanent fix for all Americans. Surely, some would quickly return to poverty, and others face debts so large that the subsidy would make little difference. But for tens of millions of Americans, this would be a life changing event. It would be a generation defining social program that reshapes our economy for decades to come.</p>
+            <p data-i18n="infoBox2">This would not be a permanent fix for all Americans. Surely, some would quickly return to poverty, and others face debts so large that the subsidy would make little difference. But for tens of millions of Americans, this would be a life changing event. It would be a generation defining social program that reshapes our economy for decades to come.</p>
           </div>
        </div>
 
@@ -512,38 +640,50 @@
             <span class="label">7.5%</span>
             <div class="dotted-line"></div>
             <div class="description">
-              <h2>Provide clean drinking water and toilet access to every human on earth.</h2>
+              <h2 data-i18n="infoBox3">Provide clean drinking water and toilet access to every human on earth.</h2>
             </div>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>Around <a href="https://www.who.int/news-room/detail/12-07-2017-2-1-billion-people-lack-safe-drinking-water-at-home-more-than-twice-as-many-lack-safe-sanitation" target="_blank" rel="noopener noreferrer">844 million people</a> have no access to clean water of any kind. About the same number have no access to a toilet or latrine of any kind, and therefore defecate in the open.</p>
+            <p><span data-i18n="infoBox4" >Around </span>
+              <a href="https://www.who.int/news-room/detail/12-07-2017-2-1-billion-people-lack-safe-drinking-water-at-home-more-than-twice-as-many-lack-safe-sanitation" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="infoBox4Link">844 million people</span></a> 
+              <span data-i18n="infoBox4C"> have no access to clean water of any kind. About the same number have no access to a toilet or latrine of any kind, and therefore defecate in the open.</span></p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="worldchart">
             <img src="img/no_clean_water.png"/>
-            <h2 class="description">No clean water</h2>
+            <h2 class="description" data-i18n="infoBox5">No clean water</h2>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>Contaminated water is a major source of disease, including cholera, dysentery, and typhoid. <a href="https://www.who.int/news-room/fact-sheets/detail/drinking-water" target="_blank" rel="noopener noreferrer">It is estimated</a> that contaminated water kills about 829,000 people every year, making it one of the world's biggest killers. The cost to provide clean water and waste disposal for everyone on earth would be about <a href="https://www.who.int/water_sanitation_health/watandmacr3.pdf" target="_blank" rel="noopener noreferrer">$240 billion</a>, or 7.5% of the wealth controlled by the 400 richest Americans.</p>
+            <p><span data-i18n="infoBox6">Contaminated water is a major source of disease, including cholera, dysentery, and typhoid. </span>
+              <a href="https://www.who.int/news-room/fact-sheets/detail/drinking-water" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="infoBox6Link" >It is estimated</span></a> 
+              <span data-i18n="infoBox6C">that contaminated water kills about 829,000 people every year, making it one of the world's biggest killers. The cost to provide clean water and waste disposal for everyone on earth would be about </span>
+              <a href="https://www.who.int/water_sanitation_health/watandmacr3.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="infoBox6Link1">$240 billion</span></a>, 
+              <span data-i18n="infoBox6C1"> or 7.5% of the wealth controlled by the 400 richest Americans.</span></p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <div class="title">
+          <div class="title" data-i18n="infoBox7">
             OK, now that we've established the scale of inequality in the United States, let's dare to dream a little bigger.
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <h2 class="title what-could-we-do">What could we do with under 40% of this money?</h2>
+          <h2 class="title what-could-we-do" data-i18n="infoBox8">What could we do with under 40% of this money?</h2>
         </div>
 
 
@@ -555,21 +695,30 @@
             <span class="label">39.6%</span>
             <div class="dotted-line"></div>
             <div class="description">
-              <h2>Provide paid maternity and paternity leave to every American for the next 100 years</h2>
+              <h2 data-i18n="infoBox9">Provide paid maternity and paternity leave to every American for the next 100 years</h2>
             </div>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>Paid maternity and paternity leave are estimated to cost around <a href="https://www.americanactionforum.org/insight/the-fiscal-cost-of-a-paid-parental-leave-program-by-state/" target="_blank" rel="noopener noreferrer">$12 billion</a> per year. This is 0.39% of the wealth controlled by 400 Americans. It is 5% of the wealth they accrued in 2020 alone.</p>
-            <p>If they repeated this payment every year for the next 100 years, it would equal 39% of the wealth they control today.</p>
+            <p><span data-i18n="infoBox10">Paid maternity and paternity leave are estimated to cost around </span>
+              <a href="https://www.americanactionforum.org/insight/the-fiscal-cost-of-a-paid-parental-leave-program-by-state/" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="infoBox10Link">$12 billion per year.</span></a> 
+              <span data-i18n="infoBox10C">This is 0.39% of the wealth controlled by 400 Americans. It is 5% of the wealth they accrued in 2020 alone.</span></p>
+
+            <p data-i18n="infoBox11">If they repeated this payment every year for the next 100 years, it would equal 39% of the wealth they control today.</p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>This is a more complex program to estimate than the others considered on this page, because the expense would be continuous, rather than one-time, and the cost is highly variable based on the size of the benefit provided. Still, using the <a href="https://www.manning-napier.com/insights/blogs/insights-for-non-profits/endowments-and-foundations-a-closer-look-at-spending-rules" target="_blank" rel="noopener noreferrer">5% endowment payout rule</a> the super wealthy should be able to finance a family leave program about 12 times more generous than the one contemplated here <u>forever</u> and still get richer into perpetuity, even accounting for inflation.</p>
+            <p><span data-i18n="infoBox12">This is a more complex program to estimate than the others considered on this page, because the expense would be continuous, rather than one-time, and the cost is highly variable based on the size of the benefit provided. Still, using the </span>
+              <a href="https://www.manning-napier.com/insights/blogs/insights-for-non-profits/endowments-and-foundations-a-closer-look-at-spending-rules" 
+              target="_blank" 
+              rel="noopener noreferrer"><span data-i18n="infoBox12Link">5% endowment payout rule </span></a> 
+              <span data-i18n="infoBox12C">the super wealthy should be able to finance a family leave program about 12 times more generous than the one contemplated here <u>forever</u> and still get richer into perpetuity, even accounting for inflation.</span></p>
           </div>
         </div>
 
@@ -581,25 +730,25 @@
             <span class="label">40%</span>
             <div class="dotted-line"></div>
             <div class="description">
-              <h2>Give $10,000 to every American household</h2>
+              <h2 data-i18n="infoBox13">Give $10,000 to every American household</h2>
             </div>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <div class="title">
+          <div class="title" data-i18n="infoBox14">
             There are about 128 million households in the United States. To give each one $10,000 would cost $1.28 trillion, or about 40% of the wealth controlled by 400 Americans.
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            <p>As the coronavirus raged through America in 2020, working people were frequently presented with a seemingly impossible choice between death by premature reopening and an economic depression brought about through a continued quarantine. Unspoken in this false choice was the supposition that Americans could not pay their living expenses without either work or unsustainable government deficit spending&mdash;where else could the money have possibly come from?</p>
+            <p data-i18n="infoBox15">As the coronavirus raged through America in 2020, working people were frequently presented with a seemingly impossible choice between death by premature reopening and an economic depression brought about through a continued quarantine. Unspoken in this false choice was the supposition that Americans could not pay their living expenses without either work or unsustainable government deficit spending&mdash;where else could the money have possibly come from?</p>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <h2 class="title what-could-we-do">What could we do with 60% of this money?</h2>
+          <h2 class="title what-could-we-do" data-i18n="infoBox16">What could we do with 60% of this money?</h2>
         </div>
 
         <div class="ninety-wrapper-outer infobox infobox-close">
@@ -612,52 +761,74 @@
 
         <div class="infobox text-infobox infobox-close">
           <div class="title">
-            These programs combined would completely transform our world. By redistributing this wealth, millions of lives would be saved. Billions would be rescued from poverty and disease. By inconveniencing <em>just 400 people</em>, the entire human race could advance to a new, unprecedented level of development.
+            <span data-i18n="infoBox17">These programs combined would completely transform our world. By redistributing this wealth, millions of lives would be saved. Billions would be rescued from poverty and disease. By inconveniencing </span>
+            <em><span data-i18n="infoBox17EM">just 400 people</span></em>, 
+            <span data-i18n="infoBox17C">the entire human race could advance to a new, unprecedented level of development.</span>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close all-of-them">
           <div class="title">
-            And <em>all</em> of them would still be billionaires afterwards.
+            <span data-i18n="infoBox18">And </span>
+            <em><span data-i18n="infoBox18EM">all</span></em> 
+            <span data-i18n="infoBox18C">of them would still be billionaires afterwards.</span>
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-close">
-          <div class="title">
+          <div class="title" data-i18n="infoBox19">
             Is it really so radical to suggest that this is the right thing to do? Given the choice between millions of deaths, and slightly shrinking the fortunes of a few super rich people, how could anyone conclude that the death of millions is preferable?
           </div>
         </div>
 
         <div class="infobox text-infobox infobox-half">
-          <h2 class="title what-could-we-do">We cannot accept this level of inequality any longer.</h2>
+          <h2 class="title what-could-we-do" data-i18n="infoBox20">We cannot accept this level of inequality any longer.</h2>
         </div>
 
       </div>
     </div>
   </div>
+
   <div class="footer">
-    <div>Updated June 30, 2022. <a target="_blank" rel="noopener noreferrer" href="https://github.com/MKorostoff/1-pixel-wealth/blob/master/README.md">About this page</a></div>
-    <div class="also">Check out my other works <a href="https://ronnycoste.com" target="_blank" rel="noopener noreferrer">Ronny Coste</a></div>
+    <div id="footer">Updated June 30, 2022. </span>
+      <a target="_blank" 
+      rel="noopener noreferrer" 
+      href="https://github.com/lertsoft/1-pixel-wealth/blob/master/README.md">
+      <span >About this page</span></a>
+    </div>
+    
+    <div class="also"><span data-i18n="footerMe"> Check out my other works </span>
+      <a href="https://ronnycoste.com" 
+      target="_blank" 
+      rel="noopener noreferrer">Ronny Coste</a>
+    </div>
+      
+      <div class="buttonlg">
+        <h3 >Change Languages! </h3>
+        <button >
+          <a href="?lang" > English </a>
+        </button>
+        <button >
+          <a href="?lang=es" > 
+            Español
+          </a>
+        </button>
+        <button >
+          <a href="?lang=fr" > 
+            Français
+          </a>
+        </button>
+    </div>
   </div>
 
-  <div style="height: 150px">
-    <button onclick="i18next.changeLanguage('en')">
-    english
-    </button>
-    <button onclick="i18next.changeLanguage('es')">
-    spanish
-    </button>
-    <hr />
-    <div id=""></div>
-    <button id="saveBtn"></button>
-    <hr />
-    <div id="info"></div>
-  </div>
+  <!-- Change Language -->
+ 
   
   
 
 </div>
-<script type="text/javascript" src="main.js?version=1.9"></script>
+<!-- more scripts -->
+<!-- This scripts are for the delay on the aperance of some elements -->
 
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -665,6 +836,15 @@
   gtag('js', new Date());
   gtag('config', 'UA-2320532-12');
 </script>
+
+<script>
+  /* DOM is ready
+  ------------------------------------------------*/
+  $(function(){
+
+      $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright
+  });
+  </script>
 
 </body>
 </html>

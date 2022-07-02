@@ -1,10 +1,10 @@
 {
-    "title",
-    "scroll"
-    "instructions"
-    "USWealth"
-    "million"
-    'billion': "$1 billon",
+    "title": "Riquezas mostradas a escala",
+    "scroll": "Desliza a la derecha",
+    "instruc": "To scroll right, use shift + mousewheel. If you have a touchpad, swipe sideways.",
+    "USWealth": "(Ingreso familiar promedio EEUU)",
+    "million": "$1 millon",
+    "billion": "$1 mil millones ",
     "bezozWealth": "$185 mil millones (riqueza de Jeff Bezos)",
     "80M": "$80 millones",
     "80M1": "$80 millones",

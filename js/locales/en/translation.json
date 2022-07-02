@@ -1,7 +1,7 @@
 {
     "title": "Wealth, shown to scale",
     "scroll": "scroll right",
-    "instructions": "To scroll right, use shift + mousewheel. If you have a touchpad, swipe sideways.",
+    "instruc": "To scroll right, use shift + mousewheel. If you have a touchpad, swipe sideways.",
     "USWealth": "(Median US household income)",
     "million": "$1 million",
     "billion": "$1 billion",

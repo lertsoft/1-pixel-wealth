@@ -1,3 +1,4 @@
+// ID gathering for interactive components of the website
 var bezos = document.getElementById('bezos');
 var bezos_counter = document.getElementById('bezos-counter');
 var bezosCounterStart = document.getElementById('bezos-counter-start');
@@ -12,6 +13,7 @@ var sixtyPercentScrollPercentage = 0.0;
 var babies = document.getElementById('babies-wrapper');
 var baby_counter = document.getElementById('baby-counter');
 
+// Currency is USD and not localize for simplicity sake
 var thousand = new Intl.NumberFormat('en-US')
 var money = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -19,8 +21,11 @@ var money = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 0,
   maximumFractionDigits: 0,
 });
+
+// Setting the starting point as false
 var additional_instructions_shown = false;
 
+// Function that activates if we don't move the mouse or track pad for some time
 function detect_confused_user(e, timer) {
   if (!additional_instructions_shown) {
     additional_instructions_shown = true;
@@ -39,6 +44,7 @@ function detect_very_confused_user(e, timer) {
   detect_confused_user(e, 4500);
 }
 
+// if any of these is detected rather not dectected show instructions
 if (window.innerWidth > 450) {
   document.addEventListener("mousemove", detect_very_confused_user, {once: true});
   document.addEventListener("mousewheel", detect_slightly_confused_user, {once: true});
@@ -74,6 +80,7 @@ babies.addEventListener('scroll', function(){
   baby_counter.innerHTML = thousand.format(Math.floor(babies.scrollTop / bg_size * 5));
 })
 
+// Wealth counter
 function update_wealth_counter() {
   if (bezos_viewable()) {
     if (bezos_counter_viewable()) {
@@ -110,53 +117,56 @@ function toggleZoom() {
   document.getElementById('line-chart').classList.toggle('zoom');
 }
 
+// OLD i18n implementation... NOT IN USED.
 // I18Next for internazionalization of the website.
-i18next
-  .use(i18nextHttpBackend)
-  .use(i18nextBrowserLanguageDetector)
-  .init({
-    fallbackLng: 'en',
-    debug: true,
-    ns: ['translation'],
-    defaultNS: 'translation',
-    backend: {
-      // load from i18next-gitbook repo
-      loadPath: 'https://raw.githubusercontent.com/lertsoft/1-pixel-wealth/master/locales/{{lng}}/{{ns}}.json',
-      crossDomain: true
-    }
-  }, function(err, t) {
-    // init set content
-    updateContent();
-  });
+
+// i18next
+//   .use(i18nextHttpBackend)
+//   .use(i18nextBrowserLanguageDetector)
+//   .init({
+//     fallbackLng: 'en',
+//     debug: true,
+//     ns: ['translation'],
+//     defaultNS: 'translation',
+//     backend: {
+//       // load from i18next-gitbook repo
+//       loadPath: 'https://raw.githubusercontent.com/lertsoft/1-pixel-wealth/master/locales/{{lng}}/{{ns}}.json',
+//       crossDomain: true
+//     }
+//   }, function(err, t) {
+//     // init set content
+//     updateContent();
+//   });
 
 
 // just set some content and react to language changes
 // could be optimized using vue-i18next, jquery-i18next, react-i18next, ...
-function updateContent() {
-  document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
-  document.getElementById('scroll').innerHTML = i18next.t('scroll', { what: 'i18next' });
-  document.getElementById('instructions').innerHTML = i18next.t('instructions', { what: 'i18next' });
-  document.getElementById('USWealth').innerHTML = i18next.t('USWealth', { what: 'i18next' });
-  document.getElementById('million').innerHTML = i18next.t('million', { what: 'i18next' });
-  document.getElementById('billion').innerHTML = i18next.t('billion', { what: 'i18next' });
-  document.getElementById('bezozWealth').innerHTML = i18next.t('bezozWealth', { what: 'i18next' });
-  document.getElementById('80M').innerHTML = i18next.t('80M', { what: 'i18next' });
-  document.getElementById('80M1').innerHTML = i18next.t('80M1', { what: 'i18next' });
-  document.getElementById('jeffBezoz').innerHTML = i18next.t('jeffBezoz', { what: 'i18next' });
-  document.getElementById('scale').innerHTML = i18next.t('scale', { what: 'i18next' });
-  document.getElementById('scaleLink').innerHTML = i18next.t('scaleLink', { what: 'i18next' });
-  document.getElementById('scale1').innerHTML = i18next.t('tscale1', { what: 'i18next' });
-  document.getElementById('10px').innerHTML = i18next.t('10px', { what: 'i18next' });
-  document.getElementById('saveBtn').innerHTML = i18next.t('80M', { count: Math.floor(Math.random()*2+1)  });
+
+// function updateContent() {
+//   document.getElementById('title').innerHTML = i18next.t('title', { what: 'i18next' });
+//   document.getElementById('scroll').innerHTML = i18next.t('scroll', { what: 'i18next' });
+//   document.getElementById('instruc').innerHTML = i18next.t('instruc', { what: 'i18next' });
+//   document.getElementById('USWealth').innerHTML = i18next.t('USWealth', { what: 'i18next' });
+//   document.getElementById('million').innerHTML = i18next.t('million', { what: 'i18next' });
+//   document.getElementById('billion').innerHTML = i18next.t('billion', { what: 'i18next' });
+//   document.getElementById('bezozWealth').innerHTML = i18next.t('bezozWealth', { what: 'i18next' });
+//   document.getElementById('80M').innerHTML = i18next.t('80M', { what: 'i18next' });
+//   document.getElementById('80M1').innerHTML = i18next.t('80M1', { what: 'i18next' });
+//   document.getElementById('jeffBezoz').innerHTML = i18next.t('jeffBezoz', { what: 'i18next' });
+//   document.getElementById('scale').innerHTML = i18next.t('scale', { what: 'i18next' });
+//   document.getElementById('scaleLink').innerHTML = i18next.t('scaleLink', { what: 'i18next' });
+//   document.getElementById('scale1').innerHTML = i18next.t('tscale1', { what: 'i18next' });
+//   document.getElementById('10px').innerHTML = i18next.t('10px', { what: 'i18next' });
+//   document.getElementById('saveBtn').innerHTML = i18next.t('80M', { count: Math.floor(Math.random()*2+1)  });
   
-  document.getElementById('info').innerHTML = `detected user language: "${i18next.language}"  --> loaded languages: "${i18next.languages.join(', ')}"`;
-}
+//   document.getElementById('info').innerHTML = `detected user language: "${i18next.language}"  --> loaded languages: "${i18next.languages.join(', ')}"`;
+// }
 
-function changeLng(lng) {
-  i18next.changeLanguage(lng);
-}
+// function changeLng(lng) {
+//   i18next.changeLanguage(lng);
+// }
 
-i18next.on('languageChanged', () => {
-  updateContent();
-});
+// i18next.on('languageChanged', () => {
+//   updateContent();
+// });
 

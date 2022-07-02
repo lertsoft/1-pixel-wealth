@@ -907,3 +907,14 @@ h1 {
 .medical-chart {
   text-align: center;
 }
+
+.buttonlg {
+  height: 100px;
+  /* box-sizing: border-box; */
+  margin-left: 500px;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  bottom: 40px;
+  
+}
