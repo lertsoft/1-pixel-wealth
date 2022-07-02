@@ -922,6 +922,7 @@ h1 {
 @media (max-width: 450px)
 {
   .buttonlg{
-    margin-left: 100px;
+    margin-left: 80px;
+    bottom: 80px;
   }
 }
