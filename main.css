@@ -918,3 +918,10 @@ h1 {
   bottom: 40px;
   
 }
+
+@media (max-width: 450px)
+{
+  .buttonlg{
+    margin-left: 100px;
+  }
+}
