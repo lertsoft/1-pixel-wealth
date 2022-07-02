@@ -3,7 +3,7 @@
 I made some improvement to the code. Mostly quality of life improvements such as, comments for functions and documentation of the code for all the files, and make sure that are the files are accesed locally on not over the internet or a github repo as before. Added i18n support and translated the website to spanish, and french.
 The two languages that I know. This is the  bulk of my contribution. This repo will be hosted in IPFS so that it can't never be taken down.
 
-- [Regular Host] (https://wealth.ronnycoste.com/?lang)
+- [Regular Host](https://wealth.ronnycoste.com/?lang)
 - [IPFS with Gateway](https://pixelwealth.ronnycoste.com)
 - [IPFS Link](https://ipfs.io/ipfs/QmTzGYKDutfeB7i5ZrvEsAE3141Z1hyB53o1F1TeQArJjd/)
 
