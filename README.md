@@ -11,6 +11,10 @@ Source code for https://github.com/lertsoft/1-pixel-wealth
 
 If you would like to add your translation feel free to do a pull request on these repo and added on the locales file.
 
+# Run this locally
+
+I would recommend using VS Code with the Live Server extension installed.
+That makes the process of running this locally a breeze.
 
 # Translations and Adaptations
 
@@ -53,8 +57,11 @@ _[A note on the role of citations in this project](https://github.com/MKorostoff
 - [Cost of coronavirus testing](https://www.cnbc.com/2020/04/21/coronavirus-tests-rockefeller-plan-would-screen-millions-for-covid-19.html)
 - [Efficacy of cash transfers](https://www.givedirectly.org/research-on-cash-transfers/)
 
-# About the Author
+# About the Original Author
 One pixel wealth was created by [Matt Korostoff](https://mkorostoff.github.io/)
+
+# About the modifier
+This fork was created by [Ronny Coste](https://ronnycoste.com)
 
 # Against Malaria
 

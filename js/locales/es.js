@@ -1,5 +1,5 @@
 const i18nLangs = {
-        title: "Riquezas mostradas a escala",
+        title: "Riquezas, mostradas a escala",
         scroll: "Desliza a la derecha",
         instruc: "To scroll right, use shift + mousewheel. If you have a touchpad, swipe sideways.",
         USWealth: "(Ingreso familiar promedio EEUU)",
@@ -132,9 +132,9 @@ const i18nLangs = {
         infoBox18C: "ellos seguirían siendo billonarias todavía.",
         infoBox19: "¿Es realmente tan radical sugerir que esto es lo correcto? Dada la elección entre millones de muertes y la leve reducción de las fortunas de unas pocas personas súper ricas, ¿cómo podría alguien concluir que la muerte de millones es preferible?",
         infoBox20: "No podemos aceptar más este nivel de desigualdad.",
-        footer: "Actualizado June 30, 2022.",
+        footer: "Trabajo original de",
         footerAbout: "Sobre esta página",
-        footerMe: "Chequea mi otros projectos",
+        footerMe: "Modificado por",
         french: "Frances",
         spanish: "Español",
         english: "Ingles"
